@@ -53,10 +53,10 @@ yarn dev
 ## 🖼 Screenshots
 
 ### Home Page
-![Home Page Screenshot](/public/home.png)
+![Home Page Screenshot](/home.png)
 
 ### Character Detail Page
-![Character Detail Screenshot](/public/character-detail.png)
+![Character Detail Screenshot](/character-detail.png)
 
 ## 🧩 Challenges and Solutions
 
