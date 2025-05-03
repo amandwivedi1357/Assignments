@@ -85,16 +85,6 @@ const fetchCharacters = async () => {
 }
 ```
 
-## 🔍 Future Improvements
-
-- Implement full pagination controls
-- Add character search functionality
-- Create filter options by character attributes
-- Enhance error handling and loading states
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
 
 ## 🙌 Acknowledgements
 
