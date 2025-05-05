@@ -1,0 +1,119 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* UserProfilePicture Component Styles */
+.profile-picture-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-picture {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3b82f6;
+}
+
+/* UserInformation Component Styles */
+.user-information-container {
+  text-align: center;
+  padding: 15px;
+}
+
+.user-name {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.user-email {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.user-bio {
+  color: #555;
+  font-style: italic;
+}
+
+/* UserProfile Component Styles */
+.user-profile-container {
+  max-width: 350px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* LoginMessage Component Styles */
+.login-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #3b82f6;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+/* UserDashboard Component Styles */
+.user-dashboard {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-section, .logout-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-button, .logout-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.logout-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.login-button:hover, .logout-button:hover {
+  opacity: 0.9;
+}
+
+/* Greeting Component Styles */
+.greeting-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #e6f2ff;
+  color: #1e3a8a;
+}
+
+.greeting-message {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.greeting-time {
+  color: #4b5563;
+  font-size: 0.9em;
+}
