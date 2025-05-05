@@ -1,5 +1,6 @@
 # Rick and Morty Character Explorer 🚀🛸
 
+Deployed link : https://rick-morty-rho-five.vercel.app/
 ## Project Overview
 
 A dynamic and responsive web application that allows users to explore characters from the popular animated series Rick and Morty. The application provides an intuitive interface to browse, view details, and learn more about characters from the multiverse.
