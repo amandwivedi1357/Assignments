@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    input{
+        padding: 10px;
+        
+        border-radius: 5px;
+        margin-bottom: 3rem;
+    }
+    #container{
+        width: 15rem;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+</style>
+<body>
+    <input type='text' id="name" oninput="onInput()"/>
+
+    <div id="container">
+
+    </div>
+</body>
+<script>
+
+let container = document.getElementById("container");
+let name = document.getElementById("name");
+let id;
+function onInput(){
+
+    if(id){
+        clearTimeout(id);
+
+    }
+
+     id = setTimeout(() => {
+        container.innerHTML = name.value;
+        container.style.color = "red";
+    },500)
+    console.log(id);
+}
+
+
+function Throttle(fn,delay){
+    let flag = false
+
+    return function() {
+        if(flag){
+            return
+        }
+        fn();
+        flag = true;
+        setTimeout(() => {
+            flag = false
+        }, delay);
+    }
+}
+
+
+// window.addEventListener("resize",throttle)
+</script>
+<script>
+// Throttle function to limit the rate of function calls
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+
+// Throttled resize handler
+const handleResize = throttle(() => {
+    // Perform any resize-related actions here
+    console.log('Window resized');
+    // Example: Adjust container width based on window size
+    container.style.width = `${Math.min(window.innerWidth * 0.8, 300)}px`;
+}, 200); // 200ms throttle limit
+
+// Add event listener with throttled handler
+window.addEventListener('resize', handleResize);
+throttle(handleResize,2000)
+</script>
+</html>
