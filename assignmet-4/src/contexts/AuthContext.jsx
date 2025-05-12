@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Check if user is stored in localStorage
     const storedAuth = localStorage.getItem('devboard_auth');
     if (storedAuth) {
       const authData = JSON.parse(storedAuth);
@@ -24,7 +23,7 @@ export const AuthProvider = ({ children }) => {
     setError(null);
     
     try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+      const response = await axios.get('https://jsonplaceholder.typicode.com/users/5');
       const userData = response.data;
       
       // Add a default status message
