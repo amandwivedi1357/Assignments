@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+import './Candidate.css';
 
-function App() {
+function Candidate() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -60,31 +60,31 @@ function App() {
 
   const validateForm = () => {
     const newErrors = {};
-    
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full Name is required';
-    
-    if (!formData.email) {
+
+    if (formData.fullName.trim() === '') newErrors.fullName = 'Full Name is required';
+
+    if (formData.email === '') {
       newErrors.email = 'Email is required';
     } else if (formData.email.split('@').length !== 2 || formData.email.split('.').length < 2) {
       newErrors.email = 'Email is invalid';
     }
-    
-    if (!formData.phone) {
+
+    if (formData.phone === '') {
       newErrors.phone = 'Phone is required';
-    } else if (formData.phone.length !== 10 || isNaN(formData.phone)) {
+    } else if (formData.phone.length !== 10) {
       newErrors.phone = 'Phone must be 10 digits';
     }
-    
-    if (!formData.gender) newErrors.gender = 'Gender is required';
-    
+
+    if (formData.gender === '') newErrors.gender = 'Gender is required';
+
     if (formData.skills.length < 2) {
       newErrors.skills = 'Select at least 2 skills';
     }
-    
-    if (!formData.profilePic) {
+
+    if (formData.profilePic === null) {
       newErrors.profilePic = 'Profile picture is required';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -107,6 +107,7 @@ function App() {
       setSubmittedData(updatedData);
       localStorage.setItem('candidateData', JSON.stringify(updatedData));
       
+      // Reset form
       setFormData({
         fullName: '',
         email: '',
@@ -279,4 +280,4 @@ function App() {
   );
 }
 
-export default App;
+export default Candidate;
