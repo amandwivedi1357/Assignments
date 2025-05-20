@@ -65,13 +65,13 @@ function App() {
     
     if (!formData.email) {
       newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (formData.email.split('@').length !== 2 || formData.email.split('.').length < 2) {
       newErrors.email = 'Email is invalid';
     }
     
     if (!formData.phone) {
       newErrors.phone = 'Phone is required';
-    } else if (!/^\d{10}$/.test(formData.phone)) {
+    } else if (formData.phone.length !== 10 || isNaN(formData.phone)) {
       newErrors.phone = 'Phone must be 10 digits';
     }
     
@@ -107,7 +107,6 @@ function App() {
       setSubmittedData(updatedData);
       localStorage.setItem('candidateData', JSON.stringify(updatedData));
       
-      // Reset form
       setFormData({
         fullName: '',
         email: '',
